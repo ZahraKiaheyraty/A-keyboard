@@ -1,0 +1,3 @@
+* Added a new layout: "Italian qwerty with symbols and numbers row"
+* added accented vowels as popups to the Italian QWERTY layout
+

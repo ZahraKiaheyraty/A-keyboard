@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+
+apply from: "${rootDir}/gradle/android_general.gradle"
+
+dependencies {
+    implementation project(':ime:base')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompat"
+
+    testImplementation project(':ime:base-test')
+}
