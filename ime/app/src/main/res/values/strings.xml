@@ -11,30 +11,30 @@
 
     <string name="menu_about_item">About</string>
 
-    <string name="how_to_pointer_title">Keyboard</string>
+    <string name="how_to_pointer_title">Aboard</string>
 
     <string name="change_log_card_version_title_template">\u0020\u0020Latest changes for v<xliff:g id="name">%s</xliff:g>\u0020\u0020</string>
     <string name="change_log_entry_header_template_without_name">\u0020\u0020v<xliff:g id="code">%s</xliff:g>\u0020\u0020</string>
     <string name="change_log_url">More:\u0020<xliff:g id="url">%s</xliff:g></string>
-    
+
     <string name="notification_text_testers">This is a beta version. Use with caution!</string>
     <string name="testers_version">Testers build!</string>
 
     <string name="language_root_tile">Language</string>
-    <string name="language_keyboards_settings_tile">Enable keyboards and languages.</string>
+    <string name="language_keyboards_settings_tile">Enable boards and languages.</string>
     <string name="language_grammar_settings_tile">Configure correction behavior and other dictionaries.</string>
     <string name="language_tweaks_settings_tile">Tweaks and more.</string>
 
     <!-- UI root menu -->
     <string name="ui_root_tile">UI</string>
     <string name="ui_theme_settings_tile">Pick and configure keyboard themes.</string>
-    <string name="ui_effects_settings_tile">Keyboard effects and experience.</string>
+    <string name="ui_effects_settings_tile">Board effects and experience.</string>
 
     <!-- welcome -->
     <!-- changelog -->
     <string name="changelog">Change Log</string>
     <string name="search_market_for_addons">Search for add-ons</string>
-    <string name="search_market_for_keyboard_addons">Get more keyboards at the app store</string>
+    <string name="search_market_for_keyboard_addons">Get more keyboards at the app store</string>-->
     <string name="search_market_for_quick_key_addons">Get more <i>Quick-Text</i> add-ons at the app store…</string>
     <string name="no_market_store_available">Could not find an app store on your device.\nUnable to search for add-ons!</string>
     <string name="keyboard_theme_tweak_group">Tweaks</string>
@@ -96,7 +96,7 @@
     <string name="night_mode_vibration_control">Disable key-press vibrations</string>
 
     <string name="power_save_mode_screen">Power-Saving settings</string>
-    <string name="power_save_mode_description">Power-Saving mode will reduce the energy consumption of Keyboard by disabling features:</string>
+    <string name="power_save_mode_description">Power-Saving mode will reduce the energy consumption of AnySoftKeyboard by disabling features:</string>
 
     <string name="power_save_mode_state_summary">Currently, Power-Saving trigger:\u0020%s</string>
 
@@ -189,7 +189,7 @@
     <string name="backword_support_off_summary">Shifted Backspace will delete the last character</string>
 
 
-    
+
     <string name="swipe_up_action">Swipe up</string>
     <string name="swipe_up_action_summary">Define the swipe up gesture action. Currently, %s
     </string>
@@ -233,7 +233,7 @@
     <string name="swipe_action_name_reverse_cycle_keyboards">Reverse cycle through all keyboards</string>
     <string name="swipe_action_name_shift">Shift</string>
     <string name="swipe_action_name_space">Space</string>
-    <string name="swipe_action_name_hide">Hide keyboard</string>
+    <string name="swipe_action_name_hide">Hide board</string>
     <string name="swipe_action_name_backspace">Back-space</string>
     <string name="swipe_action_name_backword">Back-word</string>
     <string name="swipe_action_name_clear_input">Clear entire text</string>
@@ -275,12 +275,12 @@
     <string name="more_ui_settings_group">User Interface</string>
 
     <string name="special_dictionaries_group">Special dictionaries</string>
-    <string name="special_dictionaries_group_summary">Suggestion dictionaries used in Keyboard</string>
+    <string name="special_dictionaries_group_summary">Suggestion dictionaries used in AnySoftKeyboard</string>
     <string name="use_user_dictionary">User-dictionary</string>
     <string name="use_user_dictionary_on_summary">Suggest user added words (double-click a typed-suggestion to add)</string>
     <string name="use_user_dictionary_off_summary"/>
     <string name="always_use_fallback_user_dictionary">Use private User-Dictionary storage</string>
-    <string name="always_use_fallback_user_dictionary_on_summary">Use private-storage Keyboard\'s built-in User-dictionary mechanism.</string>
+    <string name="always_use_fallback_user_dictionary_on_summary">Use private-storage AnySoftKeyboard\'s built-in User-dictionary mechanism.</string>
     <string name="always_use_fallback_user_dictionary_off_summary">Try to use Android\'s global built-in User-dictionary.</string>
     <string name="use_auto_dictionary">Auto dictionary</string>
     <string name="use_auto_dictionary_dialog_title">Select learn method</string>
@@ -440,8 +440,8 @@
     <string name="lang_key_shows_popup_off_summary">Language key will cycle languages</string>
 
     <string name="settings_os_clipboard_sync">Sync clipboard with OS</string>
-    <string name="settings_os_clipboard_sync_summary_on">Detect clipboard changes and sync with Keyboard.</string>
-    <string name="settings_os_clipboard_sync_summary_off">Do not listen to clipboard operations outside of Keyboard.</string>
+    <string name="settings_os_clipboard_sync_summary_on">Detect clipboard changes and sync with AnySoftKeyboard.</string>
+    <string name="settings_os_clipboard_sync_summary_off">Do not listen to clipboard operations outside of AnySoftKeyboard.</string>
 
     <string name="auto_caps">Auto-capitalization</string>
     <string name="grammar_group">Grammar</string>
@@ -454,8 +454,8 @@
     <string name="quick_fix">Quick fixes and abbreviations</string>
     <string name="quick_fix_summary">Corrects commonly typed mistakes, and expands abbreviations</string>
     <string name="quick_fix_secon_disabled">…on first language only</string>
-    <string name="quick_fix_secon_disabled_summ_on">Quick fixes and abbreviations will work only on current layout language</string> 
-    <string name="quick_fix_secon_disabled_summ_off">Quick fixes and abbreviations will work on every language 
+    <string name="quick_fix_secon_disabled_summ_on">Quick fixes and abbreviations will work only on current layout language</string>
+    <string name="quick_fix_secon_disabled_summ_off">Quick fixes and abbreviations will work on every language
                   checked in override default dictionary</string>
 
     <string name="allow_suggestions_restart">Suggestions restart</string>
@@ -576,7 +576,7 @@
 
     <string name="select_keyboard_popup_title">Select keyboard</string>
     <!-- dictionaries -->
-    
+
 
     <string name="simley_key_name">Smiley key</string>
     <string name="short_smiley_key_name">Shorter Smiley key</string>
@@ -619,7 +619,7 @@
     <string name="settings_long_press_timeout_never">Never</string>
 
     <string name="settings_force_locale_title">Force Locale</string>
-    <string name="settings_force_locale_summary">Force locale used inside Keyboard (takes
+    <string name="settings_force_locale_summary">Force locale used inside AnySoftKeyboard (takes
         awhile to take affect). Currently: %s.
     </string>
 
@@ -628,7 +628,7 @@
     <string name="workaround_disable_rtl_fix_summary_on">Use OS RTL handling. Should work fine on
         newer devices.
     </string>
-    <string name="workaround_disable_rtl_fix_summary_off">Use Keyboard RTL handling. Should
+    <string name="workaround_disable_rtl_fix_summary_off">Use AnySoftKeyboard RTL handling. Should
         only be used if OS fails to do RTL.
     </string>
 
@@ -717,7 +717,7 @@
 
     <string name="developer_tools">Developer tools</string>
     <string name="click_for_developer_features">Developer tools</string>
-    <string name="click_for_developer_features_summary">Various tools for Keyboard
+    <string name="click_for_developer_features_summary">Various tools for AnySoftKeyboard
         developers
     </string>
     <string name="failed_to_create_mem_dump">Failed to create memory dump file due to:
@@ -728,7 +728,7 @@
     </string>
 
 
-    <string name="not_configured_with_click_here">Keyboard is not fully set-up for use. Click
+    <string name="not_configured_with_click_here">AnySoftKeyboard is not fully set-up for use. Click
         here to set up.
     </string>
     <string name="not_configured_with_just_click_here">Click here</string>
@@ -763,33 +763,33 @@
 
     <string name="about_additional_software_licenses">Additional Software Licenses</string>
 
-    <string name="setup_wizard_step_one_title">Enable Keyboard</string>
+    <string name="setup_wizard_step_one_title">Enable AnySoftKeyboard</string>
     <string name="setup_wizard_step_one_details">In this step, you\'ll need to enable <i>
-        Keyboard</i>. Please check <i>\'Keyboard\'</i> in your <i>Language&amp;Input
+        AnySoftKeyboard</i>. Please check <i>\'AnySoftKeyboard\'</i> in your <i>Language&amp;Input
         settings</i>. This will allow us to run on your device.
     </string>
     <string name="setup_wizard_step_one_action">Go to your <i>Language&amp;Input settings</i>…
     </string>
     <string name="setup_wizard_step_one_action_error_no_settings_activity">Error: Your device does
-        not support 3rd-party keyboards. Keyboard can not be activated!
+        not support 3rd-party keyboards. AnySoftKeyboard can not be activated!
     </string>
 
     <string name="setup_wizard_step_permissions_title">Enable Permissions</string>
 
     <string name="setup_wizard_step_permissions_details">In this step, you can approve <i>
-        Keyboard
+        AnySoftKeyboard
     </i> to read contacts stored on your device. If you wish to block this access, you may disable
         Contacts Dictionary.
     </string>
 
-    <string name="setup_wizard_step_two_title">Switch to Keyboard</string>
-    <string name="setup_wizard_step_two_details">Your system can use <i>Keyboard</i> now, but
-        it is not set as the active keyboard.\nBy switching, <i>Keyboard</i> will be your new
+    <string name="setup_wizard_step_two_title">Switch to AnySoftKeyboard</string>
+    <string name="setup_wizard_step_two_details">Your system can use <i>AnySoftKeyboard</i> now, but
+        it is not set as the active keyboard.\nBy switching, <i>AnySoftKeyboard</i> will be your new
         on-screen keyboard, along with all its features!
     </string>
     <string name="setup_wizard_step_two_action">Switch active keyboards</string>
     <string name="setup_wizard_step_three_title">What\'s next</string>
-    <string name="setup_wizard_step_three_details">Thank you for choosing <i>Keyboard</i>.
+    <string name="setup_wizard_step_three_details">Thank you for choosing <i>AnySoftKeyboard</i>.
     </string>
     <string name="setup_wizard_step_three_details_done">
         <b>You are done 🎉\nGo to your favorite app to try it out.</b>
@@ -802,17 +802,17 @@
     <string name="setup_wizard_step_three_action_all_settings">Configure everything else…</string>
 
     <string name="setup_wizard_step_download_title">Download Language Packs</string>
-    <string name="setup_wizard_step_download_details">You\'ll be happy to know that <i>Keyboard</i> supports dozens of languages. Just download the desired language-pack and enjoy typing in
+    <string name="setup_wizard_step_download_details">You\'ll be happy to know that <i>AnySoftKeyboard</i> supports dozens of languages. Just download the desired language-pack and enjoy typing in
         any language on your device.</string>
     <string name="setup_wizard_step_download_action">Download language pack</string>
     <string name="setup_wizard_step_download_skip_action">Skip</string>
 
 
-    <string name="ime_crashed_title">Keyboard Crashed!</string>
+    <string name="ime_crashed_title">AnySoftKeyboard Crashed!</string>
     <string name="ime_crashed_sub_text">Oops, didn\'t see that coming…</string>
-    <string name="ime_crashed_ticker">Oops, Keyboard crashed, didn\'t see that coming…
+    <string name="ime_crashed_ticker">Oops, AnySoftKeyboard crashed, didn\'t see that coming…
     </string>
-    <string name="ime_crashed_text">Unfortunately, there is a problem with <i>Keyboard</i>.
+    <string name="ime_crashed_text">Unfortunately, there is a problem with <i>AnySoftKeyboard</i>.
         Do not panic, there is something <b>you</b> can do to help resolve this: send us the crash
         report, and we\'ll do our best to solve this crash and get you back with an awesome keyboard
         experience!\n\nWith sincere apology, the Dev team.
@@ -828,24 +828,24 @@
     <string name="next_words_statistics_no_usage">No usage yet. Type a bit more.</string>
     <string name="clipboard_is_empty_toast">Clipboard is empty, there is nothing to paste.</string>
     <string name="clipboard_copy_done_toast">Selected text copied to clipboard.</string>
-    
+
     <string name="clipboard_paste_entries_title">Pick text to paste</string>
     <string name="next_word_prefs_clear_data">Clear next-word data</string>
     <string name="next_word_prefs_clear_data_summary">This is irreversible. All your typing history will be cleared.</string>
-    <string name="storage_permission_rationale">Keyboard requires your permission to read and write to storage your backup files.</string>
+    <string name="storage_permission_rationale">AnySoftKeyboard requires your permission to read and write to storage your backup files.</string>
     <string name="notification_read_contacts_title">Can I read your contacts?</string>
     <string name="notification_read_contacts_text">We need to read your contacts to give you a better auto-complete experience.</string>
     <string name="notification_read_contacts_ticker">Contacts permission needed</string>
-    <string name="contacts_permissions_dialog_message">Keyboard is using your contacts\'
+    <string name="contacts_permissions_dialog_message">AnySoftKeyboard is using your contacts\'
         names to provide you with a personalized word suggestion: as you type a word, we look for
         similar words to auto-complete and auto-correct your typing.
     </string>
     <string name="wizard_allow_contacts_permission">Allow contacts-based typing suggestions</string>
     <string name="allow_permission">Allow</string>
-    
+
     <string name="turn_off_contacts_dictionary">Turn off Contacts Dictionary</string>
     <string name="read_more_about_permissions">Read more about permissions…</string>
-    <string name="ask_beta_link_promo">Hey! Want new <i>Keyboard</i> stuff faster? Then
+    <string name="ask_beta_link_promo">Hey! Want new <i>AnySoftKeyboard</i> stuff faster? Then
         you\'re in luck! <i>BETA</i> channel is now available for <b>YOU</b>!\nJust sign up at the
         link below, and update through <i>Google Play</i> app store!\n\n
         https://play.google.com/apps/testing/com.menny.android.anysoftkeyboard \n\nAnd thanks for
@@ -880,16 +880,16 @@
     <string name="no_internet_fields_specific_layout">None</string>
     <string name="bottom_nav_home">Hello</string>
     <string name="setup_wizard_welcome_title">Welcome!</string>
-    <string name="setup_wizard_welcome_sub_title">Thank you for giving Keyboard a try!
+    <string name="setup_wizard_welcome_sub_title">Thank you for giving AnySoftKeyboard a try!
     </string>
     <string name="setup_wizard_welcome_info">As with any other Android keyboard, you are required to
-        enable Keyboard in Android Settings pages. This is required by Android to ensure that
+        enable AnySoftKeyboard in Android Settings pages. This is required by Android to ensure that
         your typing data is not stolen by evil keyboards*.
     </string>
-    <string name="setup_wizard_welcome_info_2">click below to start, I\'ll guide you through this.</string>
+    <string name="setup_wizard_welcome_info_2">Okay, ready? click below to start, I\'ll guide you through this.</string>
     <string name="setup_wizard_welcome_start_action">Start setup…</string>
 
-    <string name="setup_wizard_welcome_info_footnote">* Of course, Keyboard is not evil. You
+    <string name="setup_wizard_welcome_info_footnote">* Of course, AnySoftKeyboard is not evil. You
         are encouraged to look at our source code and verify that. Plus, we do not have <i>NETWORK
         </i> permissions, so we can not send any data off the device.
     </string>
@@ -949,13 +949,13 @@
     <string name="aosp_light_theme_name">AOSP Light theme</string>
     <string name="aosp_light_theme_description">AOSP-Inspired light colors keyboard theme</string>
 
-    <string name="app_share_title">Hello from Keyboard</string>
-    <string name="app_share_menu_title">Share Keyboard using</string>
-    <string name="app_share_text">Let me recommend the open-source, privacy-focus, free, highly customizable, multi-language Android keyboard app Keyboard.\nGet it from:\nPlay Store: https://play.google.com/store/apps/details?id=com.menny.android.anysoftkeyboard\nF-Droid: https://f-droid.org/en/packages/com.menny.android.anysoftkeyboard/</string>
-    
+    <string name="app_share_title">Hello from AnySoftKeyboard</string>
+    <string name="app_share_menu_title">Share AnySoftKeyboard using</string>
+    <string name="app_share_text">Let me recommend the open-source, privacy-focus, free, highly customizable, multi-language Android keyboard app AnySoftKeyboard.\nGet it from:\nPlay Store: https://play.google.com/store/apps/details?id=com.menny.android.anysoftkeyboard\nF-Droid: https://f-droid.org/en/packages/com.menny.android.anysoftkeyboard/</string>
+
     <string name="click_me_for_easter_egg_info">click me for a surprise</string>
     <!-- this URL should be localized - it should point to a web-site with information in the locale language. -->
-    
+
 
 
 </resources>

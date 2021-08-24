@@ -1,4 +1,4 @@
-rootProject.name = 'AnySoftKeyboard'
+rootProject.name = 'Aboard'
 include ':deployment'
 
 include ':api'
