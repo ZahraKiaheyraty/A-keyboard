@@ -86,7 +86,7 @@ public class MainFragment extends Fragment {
     @NonNull private Disposable mPaletteDisposable = Disposables.empty();
     private DemoAnyKeyboardView mDemoAnyKeyboardView;
     private GeneralDialogController mDialogController;
-    @NonNull private CompositeDisposable mDisposable = new CompositeDisposable();
+//    @NonNull private CompositeDisposable mDisposable = new CompositeDisposable();
 
     public MainFragment() {
         this(BuildConfig.TESTING_BUILD);
@@ -158,36 +158,36 @@ public class MainFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.main_fragment_menu, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        FragmentChauffeurActivity activity = (FragmentChauffeurActivity) requireActivity();
-        switch (item.getItemId()) {
-//            case R.id.about_menu_option:
+//    @Override
+//    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
+//        inflater.inflate(R.menu.main_fragment_menu, menu);
+//        super.onCreateOptionsMenu(menu, inflater);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        FragmentChauffeurActivity activity = (FragmentChauffeurActivity) requireActivity();
+//        switch (item.getItemId()) {
+////            case R.id.about_menu_option:
+////                activity.addFragmentToUi(
+////                        new AboutAnySoftKeyboardFragment(),
+////                        TransitionExperiences.DEEPER_EXPERIENCE_TRANSITION);
+////                return true;
+//            case R.id.tweaks_menu_option:
 //                activity.addFragmentToUi(
-//                        new AboutAnySoftKeyboardFragment(),
+//                        new MainTweaksFragment(),
 //                        TransitionExperiences.DEEPER_EXPERIENCE_TRANSITION);
 //                return true;
-            case R.id.tweaks_menu_option:
-                activity.addFragmentToUi(
-                        new MainTweaksFragment(),
-                        TransitionExperiences.DEEPER_EXPERIENCE_TRANSITION);
-                return true;
-            case R.id.backup_prefs:
-                onBackupRequested();
-                return true;
-            case R.id.restore_prefs:
-                onRestoreRequested();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+////            case R.id.backup_prefs:
+////                onBackupRequested();
+////                return true;
+////            case R.id.restore_prefs:
+////                onRestoreRequested();
+////                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
     @Override
     public void onViewStateRestored(Bundle savedInstanceState) {
@@ -342,10 +342,10 @@ public class MainFragment extends Fragment {
 
     private void onSetupDialogRequired(AlertDialog.Builder builder, int optionId, Object data) {
         switch (optionId) {
-            case R.id.backup_prefs:
-            case R.id.restore_prefs:
-                onBackupRestoreDialogRequired(builder, optionId);
-                break;
+//            case R.id.backup_prefs:
+//            case R.id.restore_prefs:
+//                onBackupRestoreDialogRequired(builder, optionId);
+//                break;
             case DIALOG_SAVE_SUCCESS:
                 builder.setTitle(R.string.prefs_providers_operation_success);
                 builder.setMessage(getString(R.string.prefs_providers_backed_up_to, data));
@@ -372,93 +372,93 @@ public class MainFragment extends Fragment {
         }
     }
 
-    private void onBackupRestoreDialogRequired(AlertDialog.Builder builder, int optionId) {
-        final int actionString;
-        final int choosePathString = R.string.word_editor_action_choose_path;
-
-        final String actionCustomPath;
-        modeBackupRestore = optionId;
-        switch (optionId) {
-            case R.id.backup_prefs:
-                action = listPair -> GlobalPrefsBackup.backup(requireContext(), listPair);
-                actionString = R.string.word_editor_action_backup_words;
-                actionCustomPath = Intent.ACTION_CREATE_DOCUMENT;
-                builder.setTitle(R.string.pick_prefs_providers_to_backup);
-                successDialog = DIALOG_SAVE_SUCCESS;
-                failedDialog = DIALOG_SAVE_FAILED;
-                break;
-            case R.id.restore_prefs:
-                action = listPair -> GlobalPrefsBackup.restore(requireContext(), listPair);
-                actionString = R.string.word_editor_action_restore_words;
-                actionCustomPath = Intent.ACTION_GET_CONTENT;
-                builder.setTitle(R.string.pick_prefs_providers_to_restore);
-                successDialog = DIALOG_LOAD_SUCCESS;
-                failedDialog = DIALOG_LOAD_FAILED;
-                break;
-            default:
-                throw new IllegalArgumentException(
-                        "The option-id " + optionId + " is not supported here.");
-        }
-
-        supportedProviders = GlobalPrefsBackup.getAllPrefsProviders(requireContext());
-        final CharSequence[] providersTitles = new CharSequence[supportedProviders.size()];
-        final boolean[] initialChecked = new boolean[supportedProviders.size()];
-        checked = new Boolean[supportedProviders.size()];
-
-        for (int providerIndex = 0; providerIndex < supportedProviders.size(); providerIndex++) {
-            // starting with everything checked
-            checked[providerIndex] = initialChecked[providerIndex] = true;
-            providersTitles[providerIndex] =
-                    getText(supportedProviders.get(providerIndex).providerTitle);
-        }
-
-        builder.setMultiChoiceItems(
-                providersTitles, initialChecked, (dialogInterface, i, b) -> checked[i] = b);
-        builder.setNegativeButton(android.R.string.cancel, null);
-        builder.setCancelable(true);
-        builder.setPositiveButton(
-                actionString,
-                (dialog, which) -> {
-                    mDisposable.dispose();
-                    mDisposable = new CompositeDisposable();
-
-                    mDisposable.add(launchBackupRestore(0, null));
-                });
-        builder.setNeutralButton(
-                choosePathString,
-                (dialog, which) -> {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                        Intent dataToFileChooser = new Intent();
-                        dataToFileChooser.setType("text/xml");
-                        if (modeBackupRestore == R.id.backup_prefs) {
-                            // create backup file in selected directory
-                            dataToFileChooser.putExtra(
-                                    Intent.EXTRA_TITLE, GlobalPrefsBackup.GLOBAL_BACKUP_FILENAME);
-                        }
-                        dataToFileChooser.setAction(actionCustomPath);
-                        dataToFileChooser.putExtra("checked", checked);
-                        try {
-                            startActivityForResult(dataToFileChooser, 1);
-                        } catch (ActivityNotFoundException e) {
-                            Logger.e(TAG, "Could not launch the custom path activity");
-                            Toast.makeText(
-                                            requireContext().getApplicationContext(),
-                                            R.string.toast_error_custom_path_backup,
-                                            Toast.LENGTH_LONG)
-                                    .show();
-                        }
-
-                    } else {
-                        Intent intent = null;
-                        if (optionId == R.id.backup_prefs) {
-                            intent = new Intent(getContext(), FileExplorerCreate.class);
-                        } else if (optionId == R.id.restore_prefs) {
-                            intent = new Intent(getContext(), FileExplorerRestore.class);
-                        }
-                        startActivity(intent);
-                    }
-                });
-    }
+//    private void onBackupRestoreDialogRequired(AlertDialog.Builder builder, int optionId) {
+//        final int actionString;
+//        final int choosePathString = R.string.word_editor_action_choose_path;
+//
+//        final String actionCustomPath;
+//        modeBackupRestore = optionId;
+//        switch (optionId) {
+//            case R.id.backup_prefs:
+//                action = listPair -> GlobalPrefsBackup.backup(requireContext(), listPair);
+//                actionString = R.string.word_editor_action_backup_words;
+//                actionCustomPath = Intent.ACTION_CREATE_DOCUMENT;
+//                builder.setTitle(R.string.pick_prefs_providers_to_backup);
+//                successDialog = DIALOG_SAVE_SUCCESS;
+//                failedDialog = DIALOG_SAVE_FAILED;
+//                break;
+//            case R.id.restore_prefs:
+//                action = listPair -> GlobalPrefsBackup.restore(requireContext(), listPair);
+//                actionString = R.string.word_editor_action_restore_words;
+//                actionCustomPath = Intent.ACTION_GET_CONTENT;
+//                builder.setTitle(R.string.pick_prefs_providers_to_restore);
+//                successDialog = DIALOG_LOAD_SUCCESS;
+//                failedDialog = DIALOG_LOAD_FAILED;
+//                break;
+//            default:
+//                throw new IllegalArgumentException(
+//                        "The option-id " + optionId + " is not supported here.");
+//        }
+//
+//        supportedProviders = GlobalPrefsBackup.getAllPrefsProviders(requireContext());
+//        final CharSequence[] providersTitles = new CharSequence[supportedProviders.size()];
+//        final boolean[] initialChecked = new boolean[supportedProviders.size()];
+//        checked = new Boolean[supportedProviders.size()];
+//
+//        for (int providerIndex = 0; providerIndex < supportedProviders.size(); providerIndex++) {
+//            // starting with everything checked
+//            checked[providerIndex] = initialChecked[providerIndex] = true;
+//            providersTitles[providerIndex] =
+//                    getText(supportedProviders.get(providerIndex).providerTitle);
+//        }
+//
+//        builder.setMultiChoiceItems(
+//                providersTitles, initialChecked, (dialogInterface, i, b) -> checked[i] = b);
+//        builder.setNegativeButton(android.R.string.cancel, null);
+//        builder.setCancelable(true);
+//        builder.setPositiveButton(
+//                actionString,
+//                (dialog, which) -> {
+//                    mDisposable.dispose();
+//                    mDisposable = new CompositeDisposable();
+//
+//                    mDisposable.add(launchBackupRestore(0, null));
+//                });
+//        builder.setNeutralButton(
+//                choosePathString,
+//                (dialog, which) -> {
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//                        Intent dataToFileChooser = new Intent();
+//                        dataToFileChooser.setType("text/xml");
+//                        if (modeBackupRestore == R.id.backup_prefs) {
+//                            // create backup file in selected directory
+//                            dataToFileChooser.putExtra(
+//                                    Intent.EXTRA_TITLE, GlobalPrefsBackup.GLOBAL_BACKUP_FILENAME);
+//                        }
+//                        dataToFileChooser.setAction(actionCustomPath);
+//                        dataToFileChooser.putExtra("checked", checked);
+//                        try {
+//                            startActivityForResult(dataToFileChooser, 1);
+//                        } catch (ActivityNotFoundException e) {
+//                            Logger.e(TAG, "Could not launch the custom path activity");
+//                            Toast.makeText(
+//                                            requireContext().getApplicationContext(),
+//                                            R.string.toast_error_custom_path_backup,
+//                                            Toast.LENGTH_LONG)
+//                                    .show();
+//                        }
+//
+//                    } else {
+//                        Intent intent = null;
+//                        if (optionId == R.id.backup_prefs) {
+//                            intent = new Intent(getContext(), FileExplorerCreate.class);
+//                        } else if (optionId == R.id.restore_prefs) {
+//                            intent = new Intent(getContext(), FileExplorerRestore.class);
+//                        }
+//                        startActivity(intent);
+//                    }
+//                });
+//    }
 
     private Disposable launchBackupRestore(int custom, Uri customUri) {
         final File filePath;
