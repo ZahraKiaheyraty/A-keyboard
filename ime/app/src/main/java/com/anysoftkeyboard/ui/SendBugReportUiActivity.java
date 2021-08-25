@@ -78,7 +78,7 @@ public class SendBugReportUiActivity extends FragmentActivity {
 
     public static final String EXTRA_KEY_BugReportDetails = "EXTRA_KEY_BugReportDetails";
 
-    private BugReportDetails mCrashReportDetails;
+//    private BugReportDetails mCrashReportDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,34 +132,34 @@ public class SendBugReportUiActivity extends FragmentActivity {
         finish();
     }
 
-    public void onSendCrashReport(View v) {
-        String[] recipients = new String[] {BuildConfig.CRASH_REPORT_EMAIL_ADDRESS};
-
-        Intent sendMail = new Intent();
-        sendMail.setAction(Intent.ACTION_SEND);
-        sendMail.setType("plain/text");
-        sendMail.putExtra(Intent.EXTRA_EMAIL, recipients);
-        sendMail.putExtra(Intent.EXTRA_SUBJECT, getText(R.string.ime_crashed_title));
-        sendMail.putExtra(Intent.EXTRA_TEXT, mCrashReportDetails.crashReportText);
-
-        try {
-            Intent sender =
-                    Intent.createChooser(
-                            sendMail, getString(R.string.ime_crashed_intent_selector_title));
-            sender.putExtra(Intent.EXTRA_EMAIL, sendMail.getStringArrayExtra(Intent.EXTRA_EMAIL));
-            sender.putExtra(Intent.EXTRA_SUBJECT, sendMail.getStringExtra(Intent.EXTRA_SUBJECT));
-            sender.putExtra(Intent.EXTRA_TEXT, mCrashReportDetails.crashReportText);
-
-            Logger.i(TAG, "Will send crash report using " + sender);
-            startActivity(sender);
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(
-                            getApplicationContext(),
-                            "Unable to send bug report via e-mail!",
-                            Toast.LENGTH_LONG)
-                    .show();
-        }
-
-        finish();
-    }
+//    public void onSendCrashReport(View v) {
+//        String[] recipients = new String[] {BuildConfig.CRASH_REPORT_EMAIL_ADDRESS};
+//
+//        Intent sendMail = new Intent();
+//        sendMail.setAction(Intent.ACTION_SEND);
+//        sendMail.setType("plain/text");
+//        sendMail.putExtra(Intent.EXTRA_EMAIL, recipients);
+//        sendMail.putExtra(Intent.EXTRA_SUBJECT, getText(R.string.ime_crashed_title));
+//        sendMail.putExtra(Intent.EXTRA_TEXT, mCrashReportDetails.crashReportText);
+//
+//        try {
+//            Intent sender =
+//                    Intent.createChooser(
+//                            sendMail, getString(R.string.ime_crashed_intent_selector_title));
+//            sender.putExtra(Intent.EXTRA_EMAIL, sendMail.getStringArrayExtra(Intent.EXTRA_EMAIL));
+//            sender.putExtra(Intent.EXTRA_SUBJECT, sendMail.getStringExtra(Intent.EXTRA_SUBJECT));
+//            sender.putExtra(Intent.EXTRA_TEXT, mCrashReportDetails.crashReportText);
+//
+//            Logger.i(TAG, "Will send crash report using " + sender);
+//            startActivity(sender);
+//        } catch (android.content.ActivityNotFoundException ex) {
+//            Toast.makeText(
+//                            getApplicationContext(),
+//                            "Unable to send bug report via e-mail!",
+//                            Toast.LENGTH_LONG)
+//                    .show();
+//        }
+//
+//        finish();
+//    }
 }

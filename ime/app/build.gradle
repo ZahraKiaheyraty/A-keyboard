@@ -2,18 +2,13 @@ group 'net.evendanan'
 
 ext.override_app_id = 'com.arad.aboard'
 ext.shouldBePublished = false
-//ext.override_release_key_alias = 'anysoftkeyboard'
+
 
 apply from: "${rootDir}/gradle/apk_module.gradle"
 
 android {
     defaultConfig {
-        //adding additional fields to the BuildConfig class.
-        String support_email_address = System.getenv("ANYSOFTKEYBOARD_CRASH_REPORT_EMAIL")
-        println 'crash report email is: ' + support_email_address
-
-        buildConfigField "String", "CRASH_REPORT_EMAIL_ADDRESS", '"' + support_email_address + '"'
-
+        versionName "1.5"
         multiDexEnabled true
     }
 
@@ -23,17 +18,7 @@ android {
             proguardFiles 'proguard-android-optimize.txt', 'proguard-rules.txt', 'proguard-anysoftkeyboard.txt'
         }
 
-        canary {
-            initWith buildTypes.release
 
-            matchingFallbacks = ['release', 'debug']
-        }
-
-        allAddOns {
-            initWith buildTypes.debug
-
-            matchingFallbacks = ['debug']
-        }
     }
 }
 
@@ -43,45 +28,16 @@ android {
         release {
             buildConfigField("boolean", "TESTING_BUILD", "true")
 
-//            packagingOptions {
-//                //since dictionary jni so files are coming from
-//                //another module, they are stripped there and should
-//                //not be stripped again.
-//                //double-stripping causes crash stacktraces to look weird
-//                //in play-store.
-//                doNotStrip '**/anysoftkey*_jni.so'
-//            }
         }
 
         debug {
             buildConfigField("boolean", "TESTING_BUILD", "true")
         }
 
-        canary {
-            buildConfigField("boolean", "TESTING_BUILD", "true")
-
-            packagingOptions {
-                //since dictionary jni so files are coming from
-                //another module, they are stripped there and should
-                //not be stripped again.
-                //double-stripping causes crash stacktraces to look weird
-                //in play-store.
-                doNotStrip '**/anysoftkey*_jni.so'
-            }
-        }
-
-        allAddOns {
-            buildConfigField("boolean", "TESTING_BUILD", "true")
-        }
     }
 }
 
-android {
-    sourceSets.getByName('allAddOns') {
-        it.java.srcDirs += 'src/debug/java'
-        it.res.srcDirs += 'src/debug/res'
-    }
-}
+
 
 dependencies {
     implementation project(':api')
@@ -122,10 +78,4 @@ dependencies {
     testImplementation project(path: ':ime:base-test')
     testImplementation 'com.github.triplet.simpleprovider:simpleprovider:1.1.0'
 
-    //allAddOns have all the add-ons packs as dependencies
-    rootProject.findProject(":addons").subprojects.forEach {
-        if (it.name == 'pack') {
-            allAddOnsImplementation it
-        }
-    }
 }
