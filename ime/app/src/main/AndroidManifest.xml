@@ -31,7 +31,7 @@
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:installLocation="internalOnly"
-        android:label="@string/ime_name"
+        android:label="@string/ime_name_main"
         android:restoreAnyVersion="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.AskApp"

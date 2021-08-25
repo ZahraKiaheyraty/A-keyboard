@@ -1,8 +1,8 @@
 group 'net.evendanan'
 
 ext.override_app_id = 'com.arad.aboard'
-ext.shouldBePublished = true
-ext.override_release_key_alias = 'anysoftkeyboard'
+ext.shouldBePublished = false
+//ext.override_release_key_alias = 'anysoftkeyboard'
 
 apply from: "${rootDir}/gradle/apk_module.gradle"
 
@@ -41,16 +41,16 @@ android {
 android {
     buildTypes {
         release {
-            buildConfigField("boolean", "TESTING_BUILD", "false")
+            buildConfigField("boolean", "TESTING_BUILD", "true")
 
-            packagingOptions {
-                //since dictionary jni so files are coming from
-                //another module, they are stripped there and should
-                //not be stripped again.
-                //double-stripping causes crash stacktraces to look weird
-                //in play-store.
-                doNotStrip '**/anysoftkey*_jni.so'
-            }
+//            packagingOptions {
+//                //since dictionary jni so files are coming from
+//                //another module, they are stripped there and should
+//                //not be stripped again.
+//                //double-stripping causes crash stacktraces to look weird
+//                //in play-store.
+//                doNotStrip '**/anysoftkey*_jni.so'
+//            }
         }
 
         debug {

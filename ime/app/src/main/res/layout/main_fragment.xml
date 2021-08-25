@@ -39,7 +39,7 @@
                 android:drawableLeft="@drawable/ic_go_to_website"
                 android:drawablePadding="6dp"
                 android:padding="8dp"
-                android:text="@string/ime_name"
+                android:text="@string/ime_name_main"
                 android:textStyle="bold" />
 
         </FrameLayout>

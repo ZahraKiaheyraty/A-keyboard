@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
-    
 
+<!--        <string name="ime_name"-->
+<!--                tools:ignore="MissingTranslation">Aboard</string>-->
     <string name="debug_tracing_starting">Tracing started!\nMake sure you stop it at some point
     </string>
     <string name="debug_tracing_starting_failed">Tracing initiating failed! Check logcat for
         details.
     </string>
     <string name="debug_tracing_finished">Tracing finished!\nTrace file is\u0020<xliff:g id="trace_file">%s</xliff:g></string>
-
+    <string name="ime_name_main"
+        tools:ignore="MissingTranslation">Aboard</string>
     <string name="menu_about_item">About</string>
 
     <string name="how_to_pointer_title">Aboard</string>
@@ -21,14 +23,14 @@
     <string name="testers_version">Testers build!</string>
 
     <string name="language_root_tile">Language</string>
-    <string name="language_keyboards_settings_tile">Enable boards and languages.</string>
+    <string name="language_keyboards_settings_tile">Enable keyboards and languages.</string>
     <string name="language_grammar_settings_tile">Configure correction behavior and other dictionaries.</string>
     <string name="language_tweaks_settings_tile">Tweaks and more.</string>
 
     <!-- UI root menu -->
     <string name="ui_root_tile">UI</string>
     <string name="ui_theme_settings_tile">Pick and configure keyboard themes.</string>
-    <string name="ui_effects_settings_tile">Board effects and experience.</string>
+    <string name="ui_effects_settings_tile">Keyboard effects and experience.</string>
 
     <!-- welcome -->
     <!-- changelog -->
@@ -233,7 +235,7 @@
     <string name="swipe_action_name_reverse_cycle_keyboards">Reverse cycle through all keyboards</string>
     <string name="swipe_action_name_shift">Shift</string>
     <string name="swipe_action_name_space">Space</string>
-    <string name="swipe_action_name_hide">Hide board</string>
+    <string name="swipe_action_name_hide">Hide keyboard</string>
     <string name="swipe_action_name_backspace">Back-space</string>
     <string name="swipe_action_name_backword">Back-word</string>
     <string name="swipe_action_name_clear_input">Clear entire text</string>
@@ -275,7 +277,7 @@
     <string name="more_ui_settings_group">User Interface</string>
 
     <string name="special_dictionaries_group">Special dictionaries</string>
-    <string name="special_dictionaries_group_summary">Suggestion dictionaries used in AnySoftKeyboard</string>
+    <string name="special_dictionaries_group_summary">Suggestion dictionaries used in Aboard</string>
     <string name="use_user_dictionary">User-dictionary</string>
     <string name="use_user_dictionary_on_summary">Suggest user added words (double-click a typed-suggestion to add)</string>
     <string name="use_user_dictionary_off_summary"/>
@@ -728,7 +730,7 @@
     </string>
 
 
-    <string name="not_configured_with_click_here">AnySoftKeyboard is not fully set-up for use. Click
+    <string name="not_configured_with_click_here">Aboard is not fully set-up for use. Click
         here to set up.
     </string>
     <string name="not_configured_with_just_click_here">Click here</string>
@@ -763,7 +765,7 @@
 
     <string name="about_additional_software_licenses">Additional Software Licenses</string>
 
-    <string name="setup_wizard_step_one_title">Enable AnySoftKeyboard</string>
+    <string name="setup_wizard_step_one_title">Enable Aboard</string>
     <string name="setup_wizard_step_one_details">In this step, you\'ll need to enable <i>
         AnySoftKeyboard</i>. Please check <i>\'AnySoftKeyboard\'</i> in your <i>Language&amp;Input
         settings</i>. This will allow us to run on your device.
@@ -777,17 +779,17 @@
     <string name="setup_wizard_step_permissions_title">Enable Permissions</string>
 
     <string name="setup_wizard_step_permissions_details">In this step, you can approve <i>
-        AnySoftKeyboard
+        Aboard
     </i> to read contacts stored on your device. If you wish to block this access, you may disable
         Contacts Dictionary.
     </string>
 
-    <string name="setup_wizard_step_two_title">Switch to AnySoftKeyboard</string>
+    <string name="setup_wizard_step_two_title">Switch to Aboard</string>
     <string name="setup_wizard_step_two_details">Your system can use <i>AnySoftKeyboard</i> now, but
         it is not set as the active keyboard.\nBy switching, <i>AnySoftKeyboard</i> will be your new
         on-screen keyboard, along with all its features!
     </string>
-    <string name="setup_wizard_step_two_action">Switch active keyboards</string>
+    <string name="setup_wizard_step_two_action">Switch active Aboard</string>
     <string name="setup_wizard_step_three_title">What\'s next</string>
     <string name="setup_wizard_step_three_details">Thank you for choosing <i>AnySoftKeyboard</i>.
     </string>
